@@ -120,3 +120,58 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Medieval-themed custom styles */
+.medieval-border {
+  border-image: linear-gradient(45deg, #8B4513, #D2691E, #CD853F, #8B4513) 1;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.medieval-shadow {
+  box-shadow: 
+    inset 0 0 20px rgba(139, 69, 19, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(139, 69, 19, 0.2);
+}
+
+.illuminated-border {
+  position: relative;
+}
+
+.illuminated-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #8B4513, #D2691E, #CD853F, #DEB887, #8B4513);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.parchment-stain {
+  position: relative;
+  overflow: hidden;
+}
+
+.parchment-stain::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(210, 180, 140, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 70% 70%,
+    rgba(160, 82, 45, 0.05) 0%,
+    transparent 40%
+  );
+  pointer-events: none;
+}
